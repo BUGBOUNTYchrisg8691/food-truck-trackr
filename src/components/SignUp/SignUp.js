@@ -18,7 +18,7 @@ export default function SignUp() {
   return (
     <div className="signup-container">
       <SignUpForm submit={submit} />
-      <Link to="/login/signin">I am already a member</Link>
+      <Link to="/login/signin">Already a member?</Link>
     </div>
   )
 }

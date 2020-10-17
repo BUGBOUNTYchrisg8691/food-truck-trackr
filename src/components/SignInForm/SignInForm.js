@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, {useState, useEffect } from 'react'
 
-import { v4 as uuid } from "uuid"
-
-import "./SignUpForm.css"
+import "./SignInForm.css"
 
 import * as yup from "yup";
 import schema from "./schema"
@@ -10,25 +8,20 @@ import schema from "./schema"
 const initialFormValues = {
   username: '',
   password: '',
-  email: '',
-  terms: false
 }
 
 const initialErrorValues = {
   username: '',
   password: '',
-  email: '',
-  terms: ''
 }
 
-export default function SignUpForm({ submit }) {
+export default function SignInForm({ submit }) {
   const [formValues, setFormValues] = useState(initialFormValues)
   const [errors, setErrors] = useState(initialErrorValues)
   const [disabled, setDisabled] = useState(true)
 
   const onChange = e => {
-    const { name, value, checked, type } = e.target
-    const newValue = type === "checkbox" ? checked : value
+    const { name, value } = e.target
 
     yup.reach(schema, name)
       .validate(value)
@@ -46,20 +39,17 @@ export default function SignUpForm({ submit }) {
       })
     setFormValues({
       ...formValues,
-      [name]: newValue
+      [name]: value
     })
   }
-  
+
   const onSubmit = e => {
     e.preventDefault()
-    const newUser = {
-      id: uuid(),
-      username: formValues.username.trim(),
-      password: formValues.password.trim(),
-      email: formValues.email.trim(),
+    const user = {
+      username: formValues.username,
+      password: formValues.password
     }
-    submit(newUser)
-    setFormValues(initialFormValues)
+    submit(user) 
   }
 
   useEffect(() => {
@@ -67,7 +57,7 @@ export default function SignUpForm({ submit }) {
       .then(valid => setDisabled(!valid))
       .catch(err => console.log(err))
   }, [formValues])
-
+  
   return (
     <form onSubmit={ onSubmit }>
       <label>
@@ -88,26 +78,7 @@ export default function SignUpForm({ submit }) {
           onChange={ onChange }
         />
       </label>
-      <label>
-        Email
-        <input
-          type="email"
-          name="email"
-          value={ formValues.email }
-          onChange={ onChange }
-        />
-      </label>
-      <label className="terms">
-        <input
-          type="checkbox"
-          name="terms"
-          checked={ formValues.terms }
-          onChange={ onChange }
-        />
-        <span className="checkmark"></span>
-        I agree to the <a href="https://www.facebook.com/terms.php">Terms of Service</a>
-      </label>
-      <button disabled={ disabled }>Sign Up</button>
+      <button disabled={ disabled }>Sign In</button>
     </form>
   )
 }

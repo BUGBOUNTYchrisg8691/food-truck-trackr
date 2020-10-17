@@ -5,6 +5,7 @@ export default yup
   .shape({
     username: yup
       .string()
+      .min(6, "Username must be at least 6 characters in length")
       .required("Username is a required field"),
     password: yup
       .string()
