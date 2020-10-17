@@ -1,12 +1,9 @@
 import React from 'react'
-import { Switch, Route, NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 import "./Header.css"
 
 import headerBanner from "../../assets/headerImg.png"
-
-import SignUp from "../SignUp/SignUp"
-import SignIn from "../SignIn/SignIn"
 
 export default function Login() {
   return (
