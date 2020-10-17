@@ -8,6 +8,7 @@ label {
   font-size: 1.4rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin: 20px;
 }
 
@@ -21,7 +22,8 @@ input[type=email] {
   border: none;
   border-bottom: 3px solid darkorange;
   background: lightgoldenrodyellow;
-  width: 60%;
+  width: 80%;
+  max-width: 500px;
   height: 4vh;
 }
 

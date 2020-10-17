@@ -12,6 +12,7 @@ export default function Login() {
   return (
     <div className="header-container">
       <img src={headerBanner} href="food truck" />
+      <h1>Food Truck TrackR</h1>
       <div className="nav-header">
         <NavLink
           activeClassName="active"

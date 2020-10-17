@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import "./SignUp.css"
+
 import SignUpForm from '../SignUpForm/SignUpForm'
 
 export default function SignUp() {
@@ -13,7 +15,7 @@ export default function SignUp() {
   }
 
   return (
-    <div>
+    <div className="signup-container">
       <SignUpForm submit={submit} />
     </div>
   )
