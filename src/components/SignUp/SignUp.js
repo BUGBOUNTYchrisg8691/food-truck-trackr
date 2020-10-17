@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from "react-router-dom"
 
 import "./SignUp.css"
 
@@ -17,6 +18,7 @@ export default function SignUp() {
   return (
     <div className="signup-container">
       <SignUpForm submit={submit} />
+      <Link to="/login/signin">I am already a member</Link>
     </div>
   )
 }
