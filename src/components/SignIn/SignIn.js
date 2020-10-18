@@ -18,7 +18,12 @@ export default function SignIn() {
   ])
 
   const submit = user => {
-    console.log(user) 
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].username === user.username && users[i].password === user.password) {
+        return true
+      }
+    }
+    return false
   }
 
   return (

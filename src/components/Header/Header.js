@@ -14,12 +14,12 @@ export default function Login() {
         <NavLink
           activeClassName="active"
           className="nav-link left"
-          to="/login/signup"
+          to="/signup"
         >Sign Up</NavLink>
         <NavLink
           activeClassName="active"
           className="nav-link right"
-          to="/login/signin"
+          to="/signin"
         >Sign In</NavLink>
       </div>
     </div>

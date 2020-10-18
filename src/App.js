@@ -16,10 +16,10 @@ function App() {
       <Header />      
 
       <Switch>
-        <Route path="/login/signup">
+        <Route path="/signup">
           <SignUp />
         </Route>
-        <Route path="/login/signin">
+        <Route path="/signin">
           <SignIn />
         </Route>
       </Switch> 

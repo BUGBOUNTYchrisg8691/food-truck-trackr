@@ -1,4 +1,5 @@
-import React, {useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useHistory, useRouteMatch } from "react-router-dom"
 
 import "./SignInForm.css"
 
@@ -19,6 +20,8 @@ export default function SignInForm({ submit }) {
   const [formValues, setFormValues] = useState(initialFormValues)
   const [errors, setErrors] = useState(initialErrorValues)
   const [disabled, setDisabled] = useState(true)
+  const { url } = useRouteMatch()
+  const hist = useHistory()
 
   const onChange = e => {
     const { name, value } = e.target
@@ -49,7 +52,10 @@ export default function SignInForm({ submit }) {
       username: formValues.username,
       password: formValues.password
     }
-    submit(user) 
+    if (submit(user)) {
+      console.log("test")
+      hist.push(`${user.username}`)
+    }
   }
 
   useEffect(() => {
