@@ -5,6 +5,8 @@ import headerImg from "../../assets/headerImg.png"
 
 import "./LandingPage.css"
 
+import MainFooter from "../MainFooter/MainFooter"
+
 export default function LandingPage() {
   return (
     <div className="landing-page">
@@ -20,6 +22,7 @@ export default function LandingPage() {
           to="/signin"
         >Sign In</NavLink>
       </div>
+      <MainFooter />
     </div>
   )
 }
