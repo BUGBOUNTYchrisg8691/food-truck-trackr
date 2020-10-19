@@ -23,14 +23,14 @@ export default function Rating({ truck }) {
       <div className="rating-truck-name">{ name }</div>
       <div className="rating-truck-category">{ category }</div>
       <div className="rating-stars">
-        { stars.map(star => {
+        { stars.map((_, idx) => {
           return (
-            <FAIcon icon={ faStarSol } />
+            <FAIcon key={ `${id}-star${idx}` } icon={ faStarSol } />
           )
         })}
-        { nulls.map(item => {
+        { nulls.map((_, idx) => {
           return (
-            <FAIcon icon={ faStarReg } />
+            <FAIcon key={ `${id}-null${idx}` } icon={ faStarReg } />
           )
         })}
       </div>

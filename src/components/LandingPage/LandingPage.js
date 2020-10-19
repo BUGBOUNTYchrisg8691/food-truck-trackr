@@ -54,7 +54,7 @@ export default function LandingPage() {
       <MainFooter />
       { foodTrucks.map(truck => {
         return (
-          <Rating truck={ truck } />
+          <Rating key={ truck.id } truck={ truck } />
         )
       })}
     </div>
