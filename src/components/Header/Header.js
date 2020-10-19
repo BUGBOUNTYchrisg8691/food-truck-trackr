@@ -5,7 +5,7 @@ import "./Header.css"
 
 import headerBanner from "../../assets/headerImg.png"
 
-export default function Login() {
+export default function Header() {
   return (
     <div className="header-container">
       <img src={headerBanner} href="food truck" />
