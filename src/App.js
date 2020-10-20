@@ -9,13 +9,16 @@ import LandingPage from "./components/LandingPage/LandingPage"
 import Header from "./components/Header/Header"
 import SignIn from "./components/SignIn/SignIn"
 import SignUp from "./components/SignUp/SignUp"
+import Dashboard from "./components/Dashboard/Dashboard"
 
 function App() {
   return (
     <>
       <CssBaseline />
-
       <Switch>
+        <Route path="/dashboard">
+          <Dashboard />
+        </Route>
         <Route path="/signup">
           <Header />      
           <SignUp />
@@ -25,6 +28,7 @@ function App() {
           <SignIn />
         </Route>
         <Route path="/">
+          <Header />
           <LandingPage />
         </Route>
       </Switch> 
